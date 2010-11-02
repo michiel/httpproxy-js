@@ -12,7 +12,11 @@ var LOCAL_PROXY_HOST = "127.0.0.1";
 
 var hostcache = {};
 
-var extractHost = function(data) {
+//
+// These two functions are just helper junk
+//
+
+function extractHost(data) {
   data = data.split(/\r/);
   for (var i=0, line; line=data[i]; i++) {
     if (line.match(/Host:/)) {
@@ -21,7 +25,7 @@ var extractHost = function(data) {
   }
 }
 
-var resolveHost = function(host, callback) {
+function resolveHost(host, callback) {
   if (hostcache[host]) {
     callback(host);
   } else {
