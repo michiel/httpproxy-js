@@ -1,6 +1,8 @@
 //
 // Simplified for brevity
 //
+// See lib/httpproxy.js for module code
+//
 
 var net = require('net');
 var dns = require('dns');
@@ -12,9 +14,9 @@ var hostcache = {};
 
 var extractHost = function(data) {
   data = data.split(/\r/);
-  for (var i=0, line; line=lines[i]; i++) {
+  for (var i=0, line; line=data[i]; i++) {
     if (line.match(/Host:/)) {
-      return line.substring(6, line.length);
+      return line.substring(7, line.length);
     } 
   }
 }
