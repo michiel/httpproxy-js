@@ -15,6 +15,12 @@ Example
 
     proxy.run();
 
+When running the proxy, try,
+
+    ~/$ http_proxy=localhost:8124 curl http://www.yahoo.com -o - 
+
+if you want your terminal filled with junk.
+
 TODO
 ----
 
