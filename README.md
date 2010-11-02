@@ -13,7 +13,7 @@ Example
         port : 8124         // default value
     });
 
-    proxy.run();
+    proxy.start();
 
 When running the proxy, try,
 
