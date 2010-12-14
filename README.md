@@ -15,6 +15,28 @@ Example
 
     proxy.start();
 
+
+For starting multiple proxies,
+
+
+  var httpproxy = require('httpproxy').proxy;
+
+  var proxies = [];
+
+  for (var port=4000; port<4010; port++) {
+    proxies.push(
+      new httpproxy({
+          host : '127.0.0.1',
+          port : port
+        })
+    );
+  }
+
+  proxies.map(function(p) {
+      p.start();
+    });
+
+
 When running the proxy, try,
 
     ~/$ http_proxy=localhost:8124 curl http://www.yahoo.com -o - 
